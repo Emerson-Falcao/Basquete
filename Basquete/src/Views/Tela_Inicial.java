@@ -5,6 +5,7 @@
 package Views;
 
 import java.awt.Color;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -21,13 +22,14 @@ public class Tela_Inicial extends javax.swing.JFrame {
     Color mouseOver= new Color(152,124,180);
     
     public Tela_Inicial() {
-        setLocationRelativeTo(null);
         initComponents();
+        setLocationRelativeTo(null);
         resulPanel = new Resultados();
         paintPanel(resulPanel);
     }
     
     public void paintPanel(JPanel panel){
+        //Este método limpa a Tela Inicial e adiciona um outro JPanel
         mainPanel.removeAll();
         mainPanel.repaint();
         mainPanel.revalidate();
