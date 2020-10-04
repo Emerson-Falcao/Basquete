@@ -35,6 +35,7 @@ public class Grafico extends javax.swing.JPanel {
         initBars();
         
     }
+    //este método busca todos os jogos no banco e os renderiza como um gráfico de barras
     public void initBars(){
         DefaultCategoryDataset barchartdata = new DefaultCategoryDataset();
         ArrayList<Jogo> jogos = null;
@@ -49,11 +50,13 @@ public class Grafico extends javax.swing.JPanel {
         } catch (IOException ex) {
             Logger.getLogger(Grafico.class.getName()).log(Level.SEVERE, null, ex);
         }
+            //cada jogo é renderizado como uma barra, indicando o número do jogo no eixo x e o placar do jogo no eixo y
             Jogo jogo;
             for(int i=1; i< jogos.size();i++){
                jogo = jogos.get(i); 
                barchartdata.setValue(jogo.getPlacar(), "",""+jogo.getNum());  
             }
+        //depois que todas as barras são criadas, o gráfico é renderizado com uso da biblioteca JFreeChart
         JFreeChart barchart = ChartFactory.createBarChart("", "", "", barchartdata, PlotOrientation.VERTICAL,false,true,false);
         CategoryPlot barchrt = barchart.getCategoryPlot();
         barchrt.setBackgroundPaint(new Color(253,253,253));

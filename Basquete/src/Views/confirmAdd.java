@@ -23,6 +23,7 @@ public class confirmAdd extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         initComponents();
     }
+    //este método chama a instância atual da Tela_Inicial e a pinta novamente com um form de addJogo atualizado
     public void novoPanel(){
         AddJogo panel = new AddJogo();
         panel.pai = frame;
@@ -143,7 +144,7 @@ public class confirmAdd extends javax.swing.JFrame {
     }//GEN-LAST:event_addButtonMouseExited
 
     private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
-        // TODO add your handling code here:
+        //quando o user confirma a adição do jogo, a tela é fechada e o form addJogo é atualizado
         novoPanel();
         dispose();
     }//GEN-LAST:event_addButtonMouseClicked

@@ -275,7 +275,7 @@ public class Tela_Inicial extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    //ao clicar nos botões do menu lateral, é alterado o painel principal para a o JPanel correspondente
     private void ResulButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ResulButtonMouseClicked
         // TODO add your handling code here:
         resulPanel = new Resultados();
