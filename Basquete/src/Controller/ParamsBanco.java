@@ -9,10 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-/**
- *
- * @author Emerson
- */
+//esta classe é utilizada para pegar os parametros de conexão com o banco a partir do arquivo "config.cfg"
 public class ParamsBanco {
     private String user;
     private String password;

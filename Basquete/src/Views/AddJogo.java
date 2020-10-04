@@ -30,10 +30,11 @@ public class AddJogo extends javax.swing.JPanel {
         initComponents();
         initJogo();
     }
+    //este método pega o numero do ultimo jogo cadastrado e adiciona +1, para que o primeiro campo de numero do formulario esteja sempre atualizado 
     public void initJogo(){
         try {
             int numJogo = ope.getUltimoJogo().getNum();
-            model = new SpinnerNumberModel(numJogo+1,numJogo+1,100000,1);
+            model = new SpinnerNumberModel(numJogo+1,numJogo+1,100000,1);//o valor inicial e minimo do campo sejam o numero do ultimo jogo cadastrado+1
             numValue.setModel(model);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AddJogo.class.getName()).log(Level.SEVERE, null, ex);
@@ -183,7 +184,7 @@ public class AddJogo extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
-        // TODO add your handling code here:
+        //este evento adiciona os valores dos campos no banco e chama a tela de confirmação
         int jogo = (int) numValue.getValue();
         
         int placar = (int) placarValue.getValue();

@@ -35,6 +35,7 @@ public class Resultados extends javax.swing.JPanel {
         initHist();
         
     }
+    //este método estiliza as tabelas para terem um GUI mais agradável que o padrão do Java
     public void initTable(JTable table,JTextArea renderer, Color cor, int rowHeight){
         
         table.getTableHeader().setUI(null);
@@ -44,6 +45,7 @@ public class Resultados extends javax.swing.JPanel {
         table.setShowGrid(false);
         
     }
+    //este método busca a última linha do banco de dados e preenche a linha principal da tabela
     public void initResulAtual(){
         Jogo ultimoJogo = null;
         try {
@@ -66,7 +68,7 @@ public class Resultados extends javax.swing.JPanel {
         
     }
     public void initHist(){
-        
+        //aqui é chamado o método que busca todos os jogos salvos no banco
         jPanel2.setVisible(false);
         DefaultTableModel model = (DefaultTableModel) resulAnte.getModel();
             ArrayList<Jogo> jogos = null;
@@ -81,6 +83,7 @@ public class Resultados extends javax.swing.JPanel {
         } catch (IOException ex) {
             Logger.getLogger(Resultados.class.getName()).log(Level.SEVERE, null, ex);
         }
+        //aqui os jogos são adicionados linha a linha na tabela
             Jogo jogo;
             for(int i = 1; i < jogos.size();i++){
                 jogo = jogos.get(i);
@@ -91,7 +94,7 @@ public class Resultados extends javax.swing.JPanel {
         resulAnte.getTableHeader().setUI(null);
         resulAnte.setRowHeight(30);
         resulAnte.setShowGrid(false);
-        resulAnte.setDefaultRenderer(Object.class, new HistRenderer());
+        resulAnte.setDefaultRenderer(Object.class, new HistRenderer());//esta tabela possui um renderer diferente, que não utiliza JTextArea para renderizar as celulas
     
     }
     /**
@@ -221,7 +224,7 @@ public class Resultados extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void histButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_histButtonMouseClicked
-        // TODO add your handling code here:
+        // este evento deixa vísivel ou invisivel o histórico de jogos
         
         if(jPanel2.isVisible()){
             jPanel2.setVisible(false);

@@ -11,10 +11,7 @@ import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-/**
- *
- * @author Emerson
- */
+//esta classe é utilizada para criar a fechar a conexão com o banco
 public class ConexaoBanco {
     
     private Connection conn = null;
@@ -25,6 +22,7 @@ public class ConexaoBanco {
     private String jdbcDriver;
     private ParamsBanco params;
     
+    //o método construtor pega os parametros de conexão a partir da classe ParamsBanco
     public ConexaoBanco() throws FileNotFoundException, IOException {
         params= new ParamsBanco();
         this.user = params.getUser();

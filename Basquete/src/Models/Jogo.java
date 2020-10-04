@@ -28,6 +28,16 @@ public class Jogo {
     public Jogo(){
         
     }
+    //este método é utilizado para os testes do JUnit
+    @Override
+    public boolean equals(Object auxJogo){
+        Jogo testJogo = (Jogo) auxJogo;
+        if(this.getNum()==testJogo.getNum() && this.getPlacar()==testJogo.getPlacar() && this.getRecordeMin() == testJogo.getRecordeMin()
+                && this.getRecordeMax() == testJogo.getRecordeMax() && this.getQuebraMin() == testJogo.getQuebraMin() && this.getQuebraMax() == testJogo.getQuebraMax()){
+            return true;
+        }
+        return false;
+    }
     public int getNum() {
         return num;
     }
